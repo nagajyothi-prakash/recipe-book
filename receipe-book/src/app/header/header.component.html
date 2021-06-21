@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <a routerLink="/" class="navbar-brand ml-2">Recipe Book</a>
+          </div>
+          <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#" (click)="onSelect('recipe')">Recipe</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a></li>
+            <li class="nav-item dropdown" appDropdown #r="appDropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+                  Manage
+                </a>
+                <ul class="dropdown-menu dropdown-menu-left" [ngClass]="{'show':r.isOpen}">
+                  <li><a class="dropdown-item" href="#">Save Data</a></li>
+                  <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+    </div>
+</nav>
