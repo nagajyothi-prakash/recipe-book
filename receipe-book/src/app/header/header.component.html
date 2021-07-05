@@ -8,15 +8,17 @@
           </div>
           <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#" (click)="onSelect('recipe')">Recipe</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a></li>
+                <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/recipes">Recipe</a></li>
+                <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/shopping-list">Shopping List</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown" appDropdown #r="appDropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+                <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdown" role="button">
                   Manage
                 </a>
                 <ul class="dropdown-menu dropdown-menu-left" [ngClass]="{'show':r.isOpen}">
-                  <li><a class="dropdown-item" href="#">Save Data</a></li>
-                  <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+                  <li><a class="dropdown-item" style="cursor: pointer;">Save Data</a></li>
+                  <li><a class="dropdown-item" style="cursor: pointer;">Fetch Data</a></li>
                 </ul>
               </li>
             </ul>
